@@ -1,0 +1,12 @@
+<div class="result_container">
+    <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><strong>Sucesso!</strong></h5>
+          <p class="card-text">Sua Nova URL:</p>
+          <input id="copy-input" value="http://abreviador.herokuapp.com/<%= result.shortUrl %>" class="form-control" type="text" disabled><br>
+          <button id="copy-button" type="button" class="btn btn-primary">Copiar</button>
+          <a class="btn btn-success" target="_blank" href="<%= result.shortUrl %>" role="button">Acessar</a>
+        </div>
+    </div>
+</div>
+<script src="/js/scripts.js"></script>
