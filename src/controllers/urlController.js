@@ -12,7 +12,7 @@ router.get('/', (_, res) => {
 });
 
 // Rota para registro de uma nova URL.
-router.post('/redutor', async (req, res) => {
+router.post('/abreviador', async (req, res) => {
   const url = req.body.url;
 
   let result = await Url.findOne({ fullUrl: url });
@@ -37,6 +37,9 @@ router.get('/:short', async (req, res) => {
   if (!result) {
     return res.status(404).send({ message: 'redirect not found.' });
   }
+
+  result.clicks++
+  result.save()
 
   return res.status(200).redirect(result.fullUrl);
 });
