@@ -17,7 +17,7 @@ dotenv.config();
 app.set('view engine', 'ejs');
 
 // Setando Express para usar diretório público.
-app.use(express.static('src/public'))
+app.use(express.static('src/public'));
 
 // Setando Express para usar Body-Parser.
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -26,15 +26,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(urlController);
 
 // Iniciando conexão com o Banco de Dados.
-const { DB_USER, DB_PASS, DB_NAME } = process.env;
-mongoose.connect(
-  `mongodb+srv://${DB_USER}:${DB_PASS}@mongodb.vnf9i.gcp.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`,
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-  }
-);
+const { DB_PATH } = process.env;
+mongoose.connect(DB_PATH, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+});
 
 // Instanciando conexão com o Banco de Dados.
 const connection = mongoose.connection;

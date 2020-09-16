@@ -35,11 +35,12 @@ router.get('/:short', async (req, res) => {
   const result = await Url.findOne({ shortUrl: short });
 
   if (!result) {
-    return res.status(404).send({ message: 'redirect not found.' });
+    return res.status(404).render('../src/views/404');
   }
 
-  result.clicks++
-  result.save()
+  // Se houver resultado, adicionando o click e salvando o registro.
+  result.clicks++;
+  result.save();
 
   return res.status(200).redirect(result.fullUrl);
 });

@@ -1,43 +1,54 @@
 body {
-    font-family: 'Ubuntu', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 h1 {
-    font-family: 'Solway', serif;
-    font-size: 5rem;
-    font-weight: bold;
+  font-family: 'Solway', serif;
+  font-size: 5rem;
+  font-weight: bold;
 }
 
 form {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 form button {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 a {
-    color: black;
+  color: #222831;
 }
 
 a:hover {
-    color: black;
-    text-decoration: none;
+  color: #393e46;
 }
 
 .title_container {
-    margin-top: 50px;
-    text-align: center;
+  margin-top: 50px;
+  text-align: center;
 }
 
 .title_container img {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .result_container {
-    width: 30vw;
-    margin: 15px auto;
+  width: 50vw;
+  margin: 15px auto;
+}
+
+.error_container {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.credits_container {
+  position: fixed;
+  bottom: 0px;
+  width: 100vw;
+  text-align: center;
 }
