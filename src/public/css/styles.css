@@ -25,6 +25,7 @@ a {
 
 a:hover {
   color: #393e46;
+  text-decoration: none;
 }
 
 .title_container {
@@ -36,8 +37,9 @@ a:hover {
   margin-bottom: 20px;
 }
 
-.result_container {
-  width: 50vw;
+.result_container,
+.clicks_container {
+  width: 40vw;
   margin: 15px auto;
 }
 
@@ -51,4 +53,9 @@ a:hover {
   bottom: 0px;
   width: 100vw;
   text-align: center;
+}
+
+#clicks {
+  font-size: 1.5rem;
+  font-weight: bold;
 }

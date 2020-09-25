@@ -45,5 +45,18 @@ router.get('/:short', async (req, res) => {
   return res.status(200).redirect(result.fullUrl);
 });
 
+// Rota para exibir o número de clicks.
+router.get('/acessos/:short', async (req, res) => {
+  const short = req.params.short;
+
+  const result = await Url.findOne({ shortUrl: short });
+
+  if (!result) {
+    return res.status(404).render('../src/views/404');
+  }
+
+  return res.status(200).render('../src/views/clicks', { result });
+});
+
 // Exportando o Router.
 export default router;
