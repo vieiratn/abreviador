@@ -4,7 +4,7 @@
   "description": "Web application to reduce urls.",
   "main": "src/server.js",
   "scripts": {
-    "start": "node src/server.js"
+    "start": "node --experimental-modules src/server.js"
   },
   "author": "Thiago Nascimento",
   "license": "MIT",

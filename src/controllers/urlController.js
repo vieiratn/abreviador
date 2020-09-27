@@ -12,7 +12,7 @@ router.get('/', (_, res) => {
 });
 
 // Rota para registro de uma nova URL.
-router.post('/abreviador', async (req, res) => {
+router.post('/url', async (req, res) => {
   const url = req.body.url;
 
   let result = await Url.findOne({ fullUrl: url });
@@ -46,7 +46,7 @@ router.get('/:short', async (req, res) => {
 });
 
 // Rota para exibir o número de clicks.
-router.get('/acessos/:short', async (req, res) => {
+router.get('/status/:short', async (req, res) => {
   const short = req.params.short;
 
   const result = await Url.findOne({ shortUrl: short });
