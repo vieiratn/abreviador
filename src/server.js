@@ -4,8 +4,11 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 
-// Importanto o Contoller de URLs.
-import urlController from './controllers/urlController.js';
+// Importanto as rotas do sistema.
+import redirectRouter from './routes/redirect.js';
+import serverRouter from './routes/server.js';
+import statusRouter from './routes/status.js';
+import urlRouter from './routes/url.js';
 
 // Instanciando o Express.
 const app = express();
@@ -22,8 +25,11 @@ app.use(express.static('src/public'));
 // Setando Express para usar Body-Parser.
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Setando o Controller de URLs para uso do Express Router.
-app.use(urlController);
+// Setando o Express para utilizar as rotas da aplicação.
+app.use(serverRouter);
+app.use(redirectRouter);
+app.use(statusRouter);
+app.use(urlRouter);
 
 // Iniciando conexão com o Banco de Dados.
 const { DB_PATH } = process.env;
